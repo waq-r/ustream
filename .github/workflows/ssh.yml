@@ -1,0 +1,17 @@
+name: ssh-to-remote-server
+on: 
+  push:
+    branches:
+      - main
+jobs:
+  deploy-frontend:
+    runs-on: ubuntu-latest #using latest ubuntu to build application
+    steps:
+    - name: executing remote ssh commands using ssh key
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USER }}
+        key: ${{ secrets.PRIVATE_KEY }}
+        port: 3000
+        script: whoami
