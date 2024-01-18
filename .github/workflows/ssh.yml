@@ -17,5 +17,3 @@ jobs:
         script: |
             cd /home/waqar/ustream
             git pull origin main
-            pm2 stop 0 || true  # Stop the process, ignoring errors if it's not running
-            pm2 start 0
