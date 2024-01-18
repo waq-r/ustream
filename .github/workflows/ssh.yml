@@ -17,5 +17,7 @@ jobs:
         script: |
             cd ~/ustream
             git pull origin main
+            export NVM_DIR=~/.nvm
+            source ~/.bashrc
             pm2 restart ustreamApp
             
