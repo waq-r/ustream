@@ -16,8 +16,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
         script: |
             cd ~/ustream
-            git pull origin main
-            export NVM_DIR=~/.nvm
+            export PATH=$PATH:/home/waqar/.nvm/versions/node/v21.6.0/bin/pm2
             source ~/.bashrc
-            pm2 restart ustreamApp
+            pm2 status
             
